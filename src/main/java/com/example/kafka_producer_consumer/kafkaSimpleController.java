@@ -21,7 +21,7 @@ public class kafkaSimpleController {
             this.jsonConverter = jsonConverter;
     }
 
-    @PostMapping
+    @PostMapping(value = "/")
     public void post(@RequestBody  ModelKafka ModelKafka){
         kafkaTemplate.send("myTopic2",jsonConverter.toJson(ModelKafka));
     }
